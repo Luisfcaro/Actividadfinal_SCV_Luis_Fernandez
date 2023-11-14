@@ -311,7 +311,8 @@ nav li a:hover {
 
 /* Estilos para el footer */
 footer {
-  position: fixed;
+  margin-top: 10px;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -330,3 +331,82 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+hr {
+  border: 0; /* Elimina el borde predeterminado */
+  height: 2px; /* Define el grosor de la línea */
+  background: linear-gradient(to right, #007BFF, #00C49D); /* Aplica un degradado de colores */
+  margin: 20px 0; /* Agrega espacio alrededor del hr */
+}
+
+
+/* Estilos para el botón */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos adicionales al pasar el ratón sobre el botón */
+button:hover {
+  background-color: #45a049;
+}
+
+
+/* Estilos para las secciones */
+section {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Estilos para los títulos de las secciones */
+section h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+/* Estilos para los subtítulos de las secciones */
+section h3 {
+  color: #4CAF50;
+  font-size: 18px;
+}
+
+/* Estilos para los párrafos de las secciones */
+section p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Estilos para las listas de las secciones */
+section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Estilos para los elementos de lista de las secciones */
+section li {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Estilos adicionales para el enlace dentro de las secciones */
+section a {
+  color: #4CAF50;
+  text-decoration: underline;
+}
+
+/* Estilos para el contenedor principal */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 20px;
+}
+
