@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica 1: Sistemas de control de versiones</title>
+    <meta name="author" content="Pau VP">
+    <style>
+        /* Reset de estilos */
+        body, h1, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fuentes predeterminadas */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+        }
+
+        /* Encabezado */
+        .s1 {
+            font-size: 26pt;
+            text-align: right;
+        }
+
+        /* Lista con íconos */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li::before {
+            content: " ";
+            color: black;
+            font-family: Wingdings;
+        }
+
+        /* Lista anidada con guiones */
+        ul ul {
+            padding-left: 20px;
+        }
+
+        ul ul li::before {
+            content: "- ";
+            font-family: Arial, sans-serif;
+        }
+
+        /* Lista anidada con círculos */
+        ul ul ul {
+            padding-left: 20px;
+        }
+
+        ul ul ul li::before {
+            content: "o ";
+            font-family: "Courier New", monospace;
+        }
+
+        /* Lista anidada con puntos */
+        ul ul ul ul {
+            padding-left: 20px;
+        }
+
+        ul ul ul ul li::before {
+            content: " ";
+            font-family: Wingdings;
+        }
+
+        /* Estilos para los divs */
+        .container {
+            margin: 20px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .team-container {
+            margin-top: 20px;
+        }
+
+        /* Estilo para los títulos */
+        .title {
+            font-size: 20pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para los usuarios */
+        .user {
+            font-weight: bold;
+        }
+
+        /* Estilo para los hooks */
+        .hook {
+            margin-left: 20px;
+        }
+
+        /* Estilo para la nota final */
+        .note {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="s1">Práctica 1: Sistemas de control de versiones</p>
+        <p>Javascript aplicado a interacciones con elementos HTML.</p>
+    </div>
+
+    <div class="container image-container">
+        <img src="/Actividadfinal_SCV_Luis_Fernandez/img/0.png" alt="Imagen">
+    </div>
+
+    <div class="container">
+        <div class="team-container">
+            <h2 class="title">Equipo de Programadores</h2>
+            <div class="user">
+                <p>El usuario 1, que es el más experimentado, se encargará de crear el repositorio del proyecto e implementará la estructura inicial de la página, incluyendo la cabecera, la barra de navegación con el acceso a Home y el footer de la página. En la parte central del home incluirá una breve descripción del curso.</p>
+            </div>
+            <div class="user">
+                <p class="s3">
+                    El usuario 2 creará la sección de “Modificar contenido HTML” en el que incluirá algún ejemplo similar al que existe en el siguiente enlace</a>, así como una explicación de dicho código. También desarrollará la sección “Modificar atributos HTML”.
+                </p>
+            </div>
+            <div class="user">
+                <p class="s3">
+                    El usuario 3 que acaba de llegar a la empresa implementará la sección “Modificar estilos CSS” de la misma forma que ha hecho el usuario 2. Añadirá ejemplos similares a <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_style" class="s3" target="_blank">este</a> (comentando el código).
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="title">Metodología Git Flow</h2>
+            <p>Debido a la complejidad del proyecto, se ha decidido seguir la metodología Git Flow para poder realizar el desarrollo.</p>
+        </div>
+
+        <div class="container">
+            <h2 class="title">Documentación en GitHub Pages</h2>
+            <p>Al finalizar el trabajo, nuestro repositorio deberá contener, además de las ramas necesarias para poder realizar el desarrollo comentado, una rama (gh-pages) en la que se incluirá toda la documentación del proceso y un proyecto creado en GitHub en el que se dará acceso como colaborador al usuario de GitHub pauvilarpastor. En el canvas de dicho proyecto, deberán aparecer las features y hotfix que se han creado a lo largo de esta actividad con toda la información posible.</p>
+        </div>
+
+        <div class="container note">
+            <h2 class="title">Nota:</h2>
+            <p>Para simular que somos el usuario 1, 2 o 3, en el mensaje del commit incluiremos el nombre de cada uno de ellos. Los hooks de husky deben subirse al repositorio para que cualquier usuario que lo clone disponga de ellos.</p>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="container">
+            <h2 class="title">Introducción a Git y Git Flow</h2>
+            <p>Una introducción teórica de qué es Git, la metodología Git Flow y por qué la utilizamos en nuestro desarrollo.</p><br>
+
+            <p>Git es un sistema de control de versiones ampliamente utilizado en el desarrollo de software que permite gestionar y rastrear cambios en el código fuente de un proyecto de manera eficiente. Git Flow, por otro lado, es una metodología de ramificación y flujo de trabajo que se basa en Git, diseñada para facilitar la colaboración y el desarrollo estructurado de proyectos. La metodología Git Flow define una serie de reglas y convenciones para organizar las ramas del repositorio de Git, lo que ayuda a mantener un flujo de trabajo ordenado, gestionar nuevas características, lanzar versiones estables y corregir errores de manera sistemática. Utilizamos Git Flow en nuestro desarrollo para promover una gestión de código más efectiva, una colaboración más fluida entre los miembros del equipo y la entrega constante de software de alta calidad a nuestros usuarios.</p>
+
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="container">
+            <h2 class="title">Proceso de Desarrollo</h2>
+            <ul>
+                    <h3>Usuario 1</h3>
+                    <p>El usuario 1, que es el más experimentado, se encargará de crear el repositorio del proyecto, adecuarlo para poder utilizar la metodología Git Flow (creación de ramas iniciales), e implementará la estructura inicial del proyecto utilizando el siguiente boilerplate (<a href="https://github.com/h5bp/html5-boilerplate" target="_blank">link</a>). Esta página inicial incluirá la cabecera, la barra de navegación con el acceso a Home y el footer de la página.</p>
+
+                    <br><b>Creacion del repositorio en github</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/1.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Creacion de las ramas principales</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/2.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Insatalacion del boilerplate</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/3.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Implementación de la cabecera, barra de navegación y footer</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/4.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <h3>Usuario 1 Hooks</h3>
+
+                    <br><b>Instalación de la librería husky:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/5.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Debemos crear un script en el package json:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/6.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Al ejecutar el script deberia crearse la carpeta .husky:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/7.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/8.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+
+
+                    
+                    
+                    <ul class="hook">
+    
+                            <p>El primero comprobará que siempre que se realice un commit en la rama hotfix exista una persona asignada para verificar que no se rompe nada. Para ello, deberá comprobar que el mensaje de commit contiene la frase “A corregir por: …”</p>
+    
+                            <br><b>Creamos el archivo de pre-commit:</b><br>
+
+                            <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/9.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+        
+                            <hr>
+
+
+                            <br><b>Creamos el hook en cuestion:</b><br>
+
+                            <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/10.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+        
+                            <hr>
+
+
+                            <br><b>Comprobamos su correcto funcionamiento intentando hacer un commit en la rama hotfix:</b><br>
+
+                            <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/11.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+        
+                            <hr>
+    
+                            <p>El segundo simplemente mostrará en consola un mensaje con un dibujo hecho con caracteres ascii una vez hagamos el checkout de una rama del proyecto. Podéis coger ejemplos de esta (<a href="https://www.asciiart.eu/" target="_blank">página</a>).</p>
+    
+
+                            <br><b>Creamos el archivo de post-checkout:</b><br>
+
+                            <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/12.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+        
+                            <hr>
+
+
+                            <br><b>Creamos el hook:</b><br>
+
+                            <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/13.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+        
+                            <hr>
+
+
+                            <br><b>Y comprobamos su funcionamiento haciendo checkout:</b><br>
+
+                            <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/14.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+        
+                            <hr>
+
+                    </ul>
+
+                    <h3>Usuario 2</h3>
+                    <p>El usuario 2, crea dos features (feature/contenidoHTML y feature/atributosHTML, una por cada sección que debe implementar). Además, añadirá el siguiente hook:</p>
+                    <ul class="hook">
+
+
+
+                        <br><b>Creamos la feature atributosHTML:</b><br>
+
+                        <br><b>Modificaciones de codigo:</b><br>
+
+
+                        <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/15.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                        <br><b>Vista de la pagina:</b><br>
+
+                        <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/16.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                        <br><b>Realizamos commit de los cambios al repositorio:</b><br>
+
+                        <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/17.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+    
+                        <hr>
+
+
+
+                        <br><b>Creamos la feature contenidoHTML:</b><br>
+
+                        <br><b>Modificaciones de codigo:</b><br>
+
+
+                        <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/18.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                        <br><b>Vista de la pagina:</b><br>
+
+                        <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/19.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+
+                        <br><b>Realizamos commit de los cambios al repositorio:</b><br>
+
+                        <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/20.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+    
+    
+                        <hr>
+    
+                            <p>Previo a realizar el commit, se verificará el correcto formato en los ficheros html. Para ello, se ejecutará el linter eslint utilizando el siguiente plugin (<a href="https://www.npmjs.com/package/eslint-plugin-html" target="_blank">link</a>).</p>
+    
+                        <hr>
+
+                    </ul>
+
+                    <h3>Usuario 3</h3>
+                    <p>El usuario 3, crea una feature (feature/estilosCSS) asociada al cambio para añadir su sección. El usuario 3, además, crea una nueva release con todas las features que etiqueta como v1.0.</p>
+
+                    <br><b>Creamos la feature estilosCSS:</b><br>
+
+                    <br><b>Modificaciones de codigo:</b><br>
+
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/21.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <br><b>Vista de la pagina:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/22.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <br><b>Realizamos commit de los cambios al repositorio:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/23.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>A continuación por tal de realizar la release debemos situarnos en la rama develop y hacer merge de las diferentes features, además de resolver los conflictos que surjan:
+                    </b><br>
+
+                    <br><b>Merge de feature/ContenidoHTML:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/24.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Merge de feature/AtributosHTML:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/25.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <br><b>Resolucion de conflictos:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/26.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+
+                    <br><b>Merge de feature/EstilosCSS:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/27.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <br><b>Resolucion de conflictos:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/28.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+
+                    <br><b>Tras realizar los merge de todas las ramas, la vista de la página queda de la siguiente forma:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/29.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/30.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Y estos cambios deben hacerse operativos en el repositorio a través de un push en la rama develop:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/31.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Para publicar estos cambios debemos hacer un merge de la rama develop en la rama release y hacer un push de los cambios:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/32.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Una vez hecho esto nos dirigimos a nuestro repositorio de github y pulsamos en el siguiente apartado:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/33.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Una vez dentro del apartado de la release rellenamos los datos necesarios y la publicamos:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/34.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <br><b>Tras publicarla nos debería de aparecer la siguiente pantalla:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/35.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <br><b>A partir de ahora cada vez que visitemos el repositorio podremos apreciar las releases realizadas:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/36.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <hr>
+
+                    <h3>Usuario 1 (Hotfix)</h3>
+                    <p>El usuario 1 que se encarga de las pruebas, decide mejorar un poco la sección del contenido creada por el usuario 2. Para ello, crea un hotfix (hotfix/mejorasV_1_0) que efectúa dicha mejora.</p>
+
+                    <br><b>La mejora que vamos a realizar es la introduccion del codigo css usado en las secciones:</b><br>
+
+                    <br><b>Modificaciones de codigo:</b><br>
+
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/37.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+                    <br><b>Vista de la pagina:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/38.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+
+                    <br><b>Realizamos commit de los cambios al repositorio:</b><br>
+
+                    <br><img src="/Actividadfinal_SCV_Luis_Fernandez/img/39.png" alt="Imagen" style="height: 40%; width: 40%; display: block; margin: 0 auto;"><br>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="container">
+            <h2 class="title">GitHub Pages y Repositorio</h2>
+            <p>Además de las ramas necesarias para poder realizar el desarrollo comentado, nuestro repositorio deberá contener una rama (gh-pages) en la que se incluirá toda la documentación del proceso y un proyecto creado en GitHub en el que se dará acceso como colaborador al usuario de GitHub pauvilarpastor. En el canvas de dicho proyecto, deberán aparecer las features y hotfix que se han creado a lo largo de esta actividad con toda la información posible.</p>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>
