@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ $(git rev-parse --abbrev-ref HEAD) = "hotfix" ]; then
-  commit_msg=$(cat $1)
-  if ! echo "$commit_msg" | grep -iq "^A corregir por:"; then
-    echo "ERROR: El mensaje de confirmación debe comenzar con 'A corregir por:'"
-    exit 1
-  fi
-fi
